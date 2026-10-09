@@ -22,9 +22,18 @@ No vendor binaries are shipped — you build the loader from your own device. Tw
 - Fingerprint: PRITOM/M10_R01/M10_R01:13/TQ1A.230105.002.A1/20240529:user/release-keys
 - SoC: Rockchip RK3562
 - CPU: quad-core (4× ARM Cortex-A53, nproc=4, implementer 0x41 = ARM), max ~2.016 GHz
-- PMIC: Rockchip RK817
-- RAM type: LPDDR4 ("LP4" in the board name)
-- GPU (per SoC spec): ARM Mali-G52
+- GPU: ARM Mali-G52, 1 core (r1p0), 300–900 MHz
+- NPU: present in the SoC but disabled in the stock device tree
+- RAM: 3 GiB LPDDR4
+- eMMC: 64 GB SK hynix (`HCG8a4`), A/B partitions, GPT
+- PMIC: Rockchip RK817 (also charger, fuel gauge, RTC and audio codec); Type-C via Hynetek HUSB320
+- Display: 10.1" 800×1280 MIPI-DSI panel (AOLY SL008PA21Y1285-B00), Silead GSL3673 touch
+- Wi-Fi/Bluetooth: SeekWave SV6160 over SDIO
+- Battery: 3990 mAh (design)
+- Sensors: accelerometer only (MiraMEMS DA223)
+- Cameras: device tree declares OV8858 (rear) + GC02M1 (front); on the unit tested neither answers on I²C
+- Debug console: UART0, 1500000 baud (FIQ debugger)
+- Kernel: 5.10.168 Android 13 GKI
 
 Product page: https://www.pritom-tech.com/tables/m10
 
